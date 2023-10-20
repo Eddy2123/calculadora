@@ -9,16 +9,33 @@
             margin-top: 40px;
             border: solid 1px #000; 
             padding: 20px;
-            background-color: #2e2e2e;
+            background-color: #a91c1c;
             border-radius: 10px;
-            box-shadow: 1px 1px 5px #000;
+            box-shadow: 5px 5px 1px #000;
 
         }
         .btn{
             width: 60px;
             height: 50px;
             margin: 5px;
-             box-shadow: 1px 1px 5px #000;
+            box-shadow: 5px 5px 1px #000
+        }
+        .clear {
+            width: 130px;
+        }
+        .zero {
+            width: 130px;
+        }
+        .enter {
+            height: 110px;
+        }
+        .resultado {
+            text-align: right;
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border: solid 1px #000;
+            box-shadow: 1px 1px 1px #000;
         }
     </style>
     <title>Calculadora</title>
@@ -29,48 +46,72 @@
       <div class="row">  
         <div class= "cold d-flex justify-content-center">    
             <div class="calculadora">                                  
-            <input type="text" placeholder="0">
+            <input id= "resultado" class="form-control resultado" type="text" placeholder=""   >
             
 
          <div class="row">
-            <button class="btn btn-dark btn-lg font-weight-light">C</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">/</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">X</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">%</button>
+            <button onClik= "calcular('acao', 'C')" class= "btn btn-danger btn-lg clear font-weight-light" type="button">C</button>
+            <button onClick= "calcular('acao','/')" class= "btn btn-dark btn-lg font-weight-light" type="button">/</button>
+            <button onClick= "calcular('acao','*')" class= "btn btn-dark btn-lg font-weight-light" type="button">*</button>
+            
          </div>
 
          <div class="row">
-            <button class= "btn btn-dark btn-lg font-weight-light">7</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">8</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">9</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">-</button>
+            <button onClick= "calcular('valor','7')" class= "btn btn-dark btn-lg font-weight-light"type="button">7</button>
+            <button onClick= "calcular('valor','8')" class= "btn btn-dark btn-lg font-weight-light"type="button">8</button>
+            <button onClick= "calcular('valor','9')" class= "btn btn-dark btn-lg font-weight-light"type="button">9</button>
+            <button onClick= "calcular('acao','-')"  class= "btn btn-dark btn-lg font-weight-light"type="button">-</button>
          </div>
 
          <div class="row">
-            <button class= "btn btn-dark btn-lg font-weight-light">4</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">5</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">6</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">+</button>
+            <button onClick= "calcular('valor','4')" class= "btn btn-dark btn-lg font-weight-light"type="button">4</button>
+            <button onClick= "calcular('valor','5')" class= "btn btn-dark btn-lg font-weight-light"type="button">5</button>
+            <button onClick= "calcular('valor','6')" class= "btn btn-dark btn-lg font-weight-light"type="button">6</button>
+            <button onClick= "calcular('acao','+')"  class= "btn btn-dark btn-lg font-weight-light"type="button">+</button>
          </div>
 
          <div class="row">
-            <button class= "btn btn-dark btn-lg font-weight-light" type="button">1</button>
-            <button class= "btn btn-dark btn-lg font-weight-light" type="button">2</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">3</button>
-            <button class= "btn btn-dark btn-lg font-weight-light"t>=</button>
+            <button onClick= "calcular('valor','1')" class= "btn btn-dark btn-lg font-weight-light"type="button">1</button>
+            <button onClick= "calcular('valor','2')" class= "btn btn-dark btn-lg font-weight-light"type="button">2</button>
+            <button onClick= "calcular('valor','3')" class= "btn btn-dark btn-lg font-weight-light"type="button">3</button>
+            <button onClick= "calcular('acao','=')"  class= "btn btn-success btn-lg font-weight-light" type="button">=</button>
           
          </div>
 
-         <div class="row">
-            <button class= "btn btn-dark btn-lg font-weight-light">0</button>
-            <button class= "btn btn-dark btn-lg font-weight-light">.</button>
+         <div class="row" >
+            <button onClick= "calcular('valor','0')" class= "btn btn-dark btn-lg zero font-weight-light"type="button">0</button>
+            <button onClick= "calcular('acao','.')" class= "btn btn-dark btn-lg font-weight-light"type="button">.</button>
             
          </div>
-        </div>
+         </div>
         </div> 
       </div>   
     </div>
- </div>
+   </div>
+
+   <script>
+      function calcular(tipo, valor){                                                             
+         if( tipo === 'acao'){
+            if(valor === 'C' ){
+               //limpar o visor
+               document.getElementById('resultado').value = ''
+            }
+            if(valor === '+' || valor ==='-'|| valor === '*' || valor === '/' || valor === '.' ){
+               document.getElementById('resultado').value += valor
+            }
+            if(valor === '='){
+               let valor_campo = eval(document.getElementById('resultado').value)
+               document.getElementById('resultado').value = valor_campo
+            }
+         } else if (tipo === 'valor'){
+            document.getElementById('resultado').value += valor
+         }
+   }
+      
+      
+      
+      
+   </script>
       
     
       
