@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    
+
+</head>
+<body>
+<script>
+ 
+class ContaBancaria{
+    constructor(agencia,numero_da__conta,saldo,limite){
+      this.agencia = agencia
+      this.numero_da__conta = numero_da__conta
+      this.saldo = saldo
+      this.limite = limite
+    }
+
+      Consultarlimite(){
+       console.log(this.limite)
+        }
+       depositar(valor){
+        let novosaldo = this.saldo += valor
+         console.log('Seu saldo é de'+ novosaldo)
+        }
+    }      
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*class Cadeira{
+    constructor(qtde_pernas,cor,giratoria,material,estado ){
+        this.qtde_pernas = qtde_pernas
+        this.cor         = cor
+        this.giratoria = giratoria
+        this.material = material
+        this.estado = estado
+    }
+    girarCadeira(){
+        if(this.giratoria === true){
+            console.log("A cadeira esta girando")
+        }else{
+            console.log("Nao eh possivel girar a cadeira")
+        }
+    }
+    
+    
+ }
+    let cadeira = new Cadeira( 4,"azul",true,"Madeira","Nova")
+     cadeira.girarCadeira()
+     let cadeira = new Cadeira (5,"amarela")
+     let cadeiras = Array()
+     cadeiras.push( new cadeiras() )
+*/
+</script>
+</body>
+</html>

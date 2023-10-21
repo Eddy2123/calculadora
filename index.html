@@ -41,16 +41,19 @@
     <title>Calculadora</title>
     <script src="index.js"></script>
 </head>
+<h1>
+-   ----       Calculadora
+</h1>
 <body style="background: rgb(215, 87, 87);">
     <div class="container">
       <div class="row">  
         <div class= "cold d-flex justify-content-center">    
             <div class="calculadora">                                  
-            <input id= "resultado" class="form-control resultado" type="text" placeholder=""   >
+            <input id= "resultado" class="form-control resultado" type="text" placeholder="0"   >
             
 
          <div class="row">
-            <button onClik= "calcular('acao', 'C')" class= "btn btn-danger btn-lg clear font-weight-light" type="button">C</button>
+            <button onClick= "calcular('acao', 'C')" class= "btn btn-danger btn-lg clear font-weight-light" type="button">C</button>
             <button onClick= "calcular('acao','/')" class= "btn btn-dark btn-lg font-weight-light" type="button">/</button>
             <button onClick= "calcular('acao','*')" class= "btn btn-dark btn-lg font-weight-light" type="button">*</button>
             
